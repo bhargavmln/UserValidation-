@@ -26,13 +26,6 @@ public class User {
 			firstName = sc.next();
 		}
 
-		LOG.info("Enter the Last Name:");
-		String lastName = sc.next();
-		while (!(newUser.validateName(lastName))) {
-			LOG.info("Invalid Entry. Enter the Last Name:");
-			lastName = sc.next();
-		}
-
 	}
 
 }
