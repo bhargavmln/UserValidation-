@@ -33,45 +33,56 @@ public class User {
 		return validate;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InvalidUserInputException {
 		User newUser = new User();
-		
+
 		LOG.info("Enter the First Name:");
 		String firstName = sc.next();
-		while (!(newUser.validateName(firstName))) {
-			LOG.info("Invalid Entry. Enter the First Name:");
-			firstName = sc.next();
+		try {
+			if (!(newUser.validateName(firstName))) {
+				throw new InvalidUserInputException("Invalid First Name");
+			}
+		} catch (InvalidUserInputException e) {
 		}
 
 		LOG.info("Enter the Last Name:");
 		String lastName = sc.next();
-		while (!(newUser.validateName(lastName))) {
-			LOG.info("Invalid Entry. Enter the Last Name:");
-			lastName = sc.next();
+		try {
+			if (!(newUser.validateName(lastName))) {
+				throw new InvalidUserInputException("Invalid Last Name");
+			}
+		} catch (InvalidUserInputException e) {
 		}
 
 		LOG.info("Enter the Email:");
 		String email = sc.next();
-		while (!(newUser.validateEmail(email))) {
-			LOG.info("Invalid Entry. Enter the Email:");
-			email = sc.next();
+		try {
+			if (!(newUser.validateEmail(email))) {
+				throw new InvalidUserInputException("Invalid Email");
+			}
+		} catch (InvalidUserInputException e) {
 		}
 
 		LOG.info("Enter the Mobile Number:");
 		sc.nextLine();
-		String mobile = sc.nextLine();
-		while (!(newUser.validateMobile(mobile))) {
-			LOG.info("Invalid Entry. Enter the Mobile Number:");
-			mobile = sc.nextLine();
+		try {
+			String mobileNumber = sc.nextLine();
+			if (!(newUser.validateMobile(mobileNumber))) {
+				throw new InvalidUserInputException("Invalid Mobile Number");
+			}
+		} catch (InvalidUserInputException e) {
 		}
-		
-		LOG.info("Enter the Password:");
-		String password = sc.next();
-		while (!(newUser.validateMobile(password))) {
-			LOG.info("Invalid Entry. Enter the Password:");
-			password = sc.next();
+
+		 LOG.info("Enter the Password:");
+		 String password = sc.next();
+		 try {
+		 if (!(newUser.validateMobile(password))) {
+			 throw new InvalidUserInputException("Invalid Password");
+			}
+		} catch (InvalidUserInputException e) {
 		}
-		
+		 
+		 LOG.info("All Exceptions Handled"); 
 	}
 
 }

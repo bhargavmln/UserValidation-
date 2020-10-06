@@ -11,15 +11,13 @@ import org.junit.runners.Parameterized;
 @RunWith(Parameterized.class)
 public class UserTest {
 	
-	private boolean mailValidation;
 	private String email;
 
 	static User user = null;
 
-	public UserTest(String email, boolean mailValidation) {
+	public UserTest(String email) {
 		super();
 		this.email = email;
-		this.mailValidation = mailValidation;
 	}
 
 	@BeforeClass
@@ -29,9 +27,9 @@ public class UserTest {
 
 	@Parameterized.Parameters
 	public static Collection<Object[]> input() {
-		return Arrays.asList(new Object[][] { { "abc@yahoo.com", true }, { "abc-100@yahoo.com", true },
-				{ "abc.100@yahoo.com", true }, { "abc111@abc.com", true }, { "ac.100@abc.com.au", true },
-				{ "abc@1.com", true }, { "abc@gmail.com.com", true }, { "abc+100@gmail.com", true } });
+		return Arrays.asList(new Object[][] { { "abc@yahoo.com"}, { "abc-100@yahoo.com" },
+				{ "abc.100@yahoo.com" }, { "abc111@abc.com"}, { "ac.100@abc.com.au" },
+				{ "abc@1.com" }, { "abc@gmail.com.com"}, { "abc+100@gmail.com" } });
 
 	}
 
@@ -61,7 +59,7 @@ public class UserTest {
 
 	@Test
 	public void givenEmail_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validateEmail("mln@mln.com");
+		boolean validation = user.validateEmail(email);
     	Assert.assertTrue(validation);
 	}
 	
