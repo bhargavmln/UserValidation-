@@ -22,11 +22,6 @@ public class User {
 		return validate;
 	}
 
-	public boolean validateMobile(String mobile) {
-		boolean validate = Pattern.matches("[0-9]{2}[ ][0-9]{10}", mobile);
-		return validate;
-	}
-
 	public static void main(String[] args) {
 		User newUser = new User();
 		
@@ -51,14 +46,6 @@ public class User {
 			email = sc.next();
 		}
 
-		LOG.info("Enter the Mobile Number:");
-		sc.nextLine();
-		String mobile = sc.nextLine();
-		while (!(newUser.validateMobile(mobile))) {
-			LOG.info("Invalid Entry. Enter the Mobile Number:");
-			mobile = sc.nextLine();
-		}
-		
 	}
 
 }
