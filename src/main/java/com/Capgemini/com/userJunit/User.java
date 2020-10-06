@@ -27,12 +27,6 @@ public class User {
 		return validate;
 	}
 
-	public boolean validatePassword(String password) {
-		boolean validate = Pattern
-				.matches(".{8,}",password);
-		return validate;
-	}
-
 	public static void main(String[] args) {
 		User newUser = new User();
 		
@@ -63,13 +57,6 @@ public class User {
 		while (!(newUser.validateMobile(mobile))) {
 			LOG.info("Invalid Entry. Enter the Mobile Number:");
 			mobile = sc.nextLine();
-		}
-		
-		LOG.info("Enter the Password:");
-		String password = sc.next();
-		while (!(newUser.validateMobile(password))) {
-			LOG.info("Invalid Entry. Enter the Password:");
-			password = sc.next();
 		}
 		
 	}
