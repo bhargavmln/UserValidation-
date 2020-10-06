@@ -1,38 +1,16 @@
 package com.Capgemini.com.userJunit;
 
-import java.util.Arrays;
-import java.util.Collection;
 import org.junit.Test;
 import org.junit.Assert;
 import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
-@RunWith(Parameterized.class)
 public class UserTest {
-	
-	private boolean mailValidation;
-	private String email;
 
 	static User user = null;
-
-	public UserTest(String email, boolean mailValidation) {
-		super();
-		this.email = email;
-		this.mailValidation = mailValidation;
-	}
 
 	@BeforeClass
 	public static void setUp() {
 		user = new User();
-	}
-
-	@Parameterized.Parameters
-	public static Collection<Object[]> input() {
-		return Arrays.asList(new Object[][] { { "abc@yahoo.com", true }, { "abc-100@yahoo.com", true },
-				{ "abc.100@yahoo.com", true }, { "abc111@abc.com", true }, { "ac.100@abc.com.au", true },
-				{ "abc@1.com", true }, { "abc@gmail.com.com", true }, { "abc+100@gmail.com", true } });
-
 	}
 
 	@Test
