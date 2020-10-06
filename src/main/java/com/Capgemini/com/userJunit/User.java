@@ -29,7 +29,7 @@ public class User {
 
 	public boolean validatePassword(String password) {
 		boolean validate = Pattern
-				.matches("^(?=.*[A-Z]).{8,}$",password);
+				.matches(".{8,}",password);
 		return validate;
 	}
 
