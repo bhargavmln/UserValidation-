@@ -35,61 +35,61 @@ public class UserTest {
 
 	@Test
 	public void givenFirstName_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validateName("Bhargav");
+		boolean validation = user.validateName.validate("Bhargav");
     	Assert.assertTrue(validation);
 	}
 	
 	@Test
 	public void givenFirstName_WhenImproper_ShouldReturnTrue() {
-		boolean validation = user.validateName("bhargav");
+		boolean validation = user.validateName.validate("bhargav");
     	Assert.assertFalse(validation);
 	}
 	
 	@Test
 	public void givenLastName_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validateName("Bhargav");
+		boolean validation = user.validateName.validate("Bhargav");
     	Assert.assertTrue(validation);
 	}
 	
 	@Test
 	public void givenLastName_WheImproper_ShouldReturnTrue() {
-		boolean validation = user.validateName("bhargav");
+		boolean validation = user.validateName.validate("bhargav");
     	Assert.assertFalse(validation);
 	}
 
 	@Test
 	public void givenEmail_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validateEmail(email);
+		boolean validation = user.validateEmail.validate(email);
     	Assert.assertTrue(validation);
 	}
 	
 	@Test
 	public void givenEmail_WhenImproper_ShouldReturnTrue() {
-		boolean validation = user.validateEmail("mln@.mln.com");
+		boolean validation = user.validateEmail.validate("mln@.mln.com");
     	Assert.assertFalse(validation);
 	}
 	
 	@Test
 	public void givenMobile_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validateMobile("91 9177634929");
+		boolean validation = user.validateMobile.validate("91 9177634929");
     	Assert.assertTrue(validation);
 	}
 	
 	@Test
 	public void givenMobile_WhenImproper_ShouldReturnTrue() {
-		boolean validation = user.validateMobile("919177634929");
+		boolean validation = user.validateMobile.validate("919177634929");
     	Assert.assertFalse(validation);
 	}
 	
 	@Test
 	public void givenPassword_WhenProper_ShouldReturnTrue() {
-		boolean validation = user.validatePassword("mlnMLN123!");
+		boolean validation = user.validatePassword.validate("mlnMLN123!");
     	Assert.assertTrue(validation);
 	}
 	
 	@Test
 	public void givenPassword_WhenImroper_ShouldReturnTrue() {
-		boolean validation = user.validatePassword("@mlnMLN123!");
+		boolean validation = user.validatePassword.validate("@mlnMLN123!");
     	Assert.assertFalse(validation);
 	}
 
